@@ -1,9 +1,9 @@
 :root {
-    --main-background-color: paleturquoise;
-    --form-background-color: #fff;
-    --blue: #31708F;
-    --green: #00A86B;
-    --error-color: red;
+    --main-background-color: #afeeee;
+    --form-background-color: #fcfcfc;
+    --default-feedback-color: #31708f;
+    --ok-feedback-color: #00a86b;
+    --error-color: #bf1c15;
 }
 
 body {
@@ -33,11 +33,33 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     min-height: 2.375rem;
 }
-.form__field-label {
-    flex: 0 1 33.33%;
+
+.form__field:first-of-type {
+    margin-top: 0;
+}
+
+.form__field input {
+    flex: 0 1 66.66%;
+}
+
+.form__field-radio {
+    display: flex;
+    align-items: baseline;
+    margin-top: 1rem;
+}
+
+.form__field-radio input[type=radio] {
+    flex: none;
+    margin-right: .75rem;
+}
+
+.form__label {
+    display: block;
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 .form__input {
@@ -47,7 +69,7 @@ body {
 }
 
 .form__actions {
-    padding-top: .5rem;
+    padding-top: 1.5rem;
 }
 
 .form__feedback {
@@ -55,18 +77,18 @@ body {
     padding: 1rem;
     border: 2px solid currentColor;
     border-radius: .25rem;
-    color: var(--blue);
+    color: var(--default-feedback-color);
     background-color: rgba(49, 112, 143, 0.1);
 }
 
-    .form__feedback:empty {
-        display: none;
-    }
+.form__feedback:empty {
+    display: none;
+}
 
-    .form__feedback.success {
-        color: var(--green);
-        background-color: rgba(0, 168, 107, 0.1);
-    }
+.form__feedback.success {
+    color: var(--ok-feedback-color);
+    background-color: rgba(0, 168, 107, 0.1);
+}
 
 .form .button {
     display: inline-block;
@@ -82,7 +104,7 @@ body {
     cursor: pointer;
 }
 
-.form .button_primary {
+.form .button-primary {
     display: block;
     width: 100%;
     font-weight: 700;
@@ -93,17 +115,18 @@ body {
     letter-spacing: 2px;
 }
 
-    .form .button_primary:hover,
-    .form .button_primary:focus {
-        background-color: #f85441;
-    }
+.form .button_primary:hover,
+.form .button_primary:focus {
+    background-color: #f85441;
+}
 
-/* Предоставляется класс .error для кастомизации поля ввода с ошибкой валидации и класс .error-message для стилизации сообщения об ошибке валидации */
 .error {
     border-color: var(--error-color);
+    border-radius: 3px;
 }
 
 .error-message {
     color: var(--error-color);
     font-style: italic;
+    font-size: .85rem;
 }

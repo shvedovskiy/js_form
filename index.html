@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <form action="#"
           method="POST"
           class="validate form"
           autocomplete="off">
         <fieldset class="form__fieldset">
-            <div class="form__field">
-                <label for="name" class="form__field-label">Name</label>
-                <input id="name"
+            <label class="form__field">
+                Name:
+                <input type="text"
+                       id="name"
                        name="name"
                        class="form__input"
                        required
                 />
-            </div>
-
-            <div class="form__field">
-                <label for="email" class="form__field-label">Email</label>
+            </label>
+            <label class="form__field">
+                Email:
                 <input type="email"
                        id="email"
                        name="email"
@@ -33,10 +32,9 @@
                        pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
                        required
                 />
-            </div>
-
-            <div class="form__field">
-                <label for="url" class="form__field-label">URL</label>
+            </label>
+            <label class="form__field">
+                URL:
                 <input type="url"
                        id="url"
                        name="url"
@@ -45,28 +43,32 @@
                        pattern="^(?:(?:https?|HTTPS?|ftp|FTP):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)*(?:\.(?:[a-zA-Z\u00a1-\uffff]{2,}))\.?)(?::\d{2,5})?(?:[/?#]\S*)?$"
                        required
                 />
-            </div>
-
-            <div class="form__field">
-                <strong>Radio Buttons</strong>
-                <label for="radio-1">Yes</label>
+            </label>
+            <span class="form__label">Radio Buttons:</span>
+            <label class="form__field-radio">
                 <input type="radio"
                        id="radio-1"
                        name="radio"
+                       class="form__input_radio"
                        required
                 />
-                <label for="radio-2">No</label>
+                First radio button (Yes)
+            </label>
+
+            <label class="form__field-radio">
                 <input type="radio"
                        id="radio-2"
                        name="radio"
+                       class="form__input_radio"
                        required
                 />
-            </div>
+                Second radio button (No)
+            </label>
 
             <div class="form__actions">
                 <input type="submit"
                        id="submit"
-                       class="button button_primary"
+                       class="button button-primary"
                        value="Submit"
                 />
                 <div id="feedback"
