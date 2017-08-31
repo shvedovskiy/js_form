@@ -1,0 +1,109 @@
+:root {
+    --main-background-color: paleturquoise;
+    --form-background-color: #fff;
+    --blue: #31708F;
+    --green: #00A86B;
+    --error-color: red;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.25;
+    background-color: var(--main-background-color);
+}
+
+.form {
+    width: 320px;
+    padding: 2rem;
+    border: 0;
+    border-radius: .375rem;
+    background-color: var(--form-background-color);
+    box-shadow: 0 15px 45px -5px rgba(10, 16, 34, .15);
+}
+
+.form__fieldset {
+    border: 0;
+    padding: 0;
+}
+
+.form__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    min-height: 2.375rem;
+}
+.form__field-label {
+    flex: 0 1 33.33%;
+}
+
+.form__input {
+    display: block;
+    flex: 1;
+    padding: .5rem;
+}
+
+.form__actions {
+    padding-top: .5rem;
+}
+
+.form__feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px solid currentColor;
+    border-radius: .25rem;
+    color: var(--blue);
+    background-color: rgba(49, 112, 143, 0.1);
+}
+
+    .form__feedback:empty {
+        display: none;
+    }
+
+    .form__feedback.success {
+        color: var(--green);
+        background-color: rgba(0, 168, 107, 0.1);
+    }
+
+.form .button {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    font-size: .875rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.form .button_primary {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    background-color: salmon;
+    color: var(--form-background-color);
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+    .form .button_primary:hover,
+    .form .button_primary:focus {
+        background-color: #f85441;
+    }
+
+/* Предоставляется класс .error для кастомизации поля ввода с ошибкой валидации и класс .error-message для стилизации сообщения об ошибке валидации */
+.error {
+    border-color: var(--error-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-style: italic;
+}
